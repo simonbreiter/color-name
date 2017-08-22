@@ -8,8 +8,8 @@ build:
   stage: build
   script:
     - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD $DOCKER_REGISTRY
-    - docker build -t $DOCKER_REGISTRY/simonbreiter/colorname .
-    - docker push $DOCKER_REGISTRY/simonbreiter/colorname
+    - docker build -t $DOCKER_REGISTRY/simonbreiter/color-name .
+    - docker push $DOCKER_REGISTRY/simonbreiter/color-name
   only:
     - master
 deploy:
