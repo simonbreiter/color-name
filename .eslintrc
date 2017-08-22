@@ -1,0 +1,7 @@
+{
+  "extends": ["standard", "standard-jsx"],
+  "env": {
+    "node": true,
+    "jasmine": true
+  }
+}

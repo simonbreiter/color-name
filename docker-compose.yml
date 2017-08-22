@@ -1,0 +1,10 @@
+version: "3"
+services:
+  node:
+    container_name: color-name
+    build: .
+    ports:
+       - "3000:3000"
+    volumes:
+      - ./src:/usr/src/color-name/src
+    command: npm run dev
