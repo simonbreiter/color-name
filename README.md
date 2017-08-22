@@ -3,7 +3,7 @@
 [![coverage report](https://gitlab.com/simonbreiter/color-name/badges/master/coverage.svg)](https://gitlab.com/simonbreiter/color-name/commits/master)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-Repository of colorname.io
+Repository of [colorname.io](https://colorname.io)
 
 ## Getting started
 
