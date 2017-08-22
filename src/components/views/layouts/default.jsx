@@ -6,7 +6,7 @@ const DefaultLayout = createReactClass({
     return (
       <html>
         <head>
-          <title>Color Picker</title>
+          <title>Color Name</title>
         </head>
         <body>
           <div className='app'>
