@@ -16,4 +16,4 @@ deploy:
   stage: deploy
   image: cdrx/rancher-gitlab-deploy
   script:
-   - upgrade --rancher-url $RANCHER_URL --rancher-key $RANCHER_ACCESS_KEY --rancher-secret $RANCHER_SECRET_KEY --stack colorname --service colorname --no-start-before-stopping
+   - upgrade --rancher-url $RANCHER_URL --rancher-key $RANCHER_ACCESS_KEY --rancher-secret $RANCHER_SECRET_KEY --stack color-name --service color-name --no-start-before-stopping
