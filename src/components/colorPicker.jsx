@@ -30,6 +30,8 @@ const Input = styled.input`
   display: block;
   margin: 0 auto;
   width: 16rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   &::-webkit-input-placeholder {
     color: black;  
   }
