@@ -1,13 +1,15 @@
 import React from 'react'
 import createReactClass from 'create-react-class'
 import styled from 'styled-components'
+import GitlabLogo from '../atomic/GitlabLogo'
 import { spring } from 'react-motion'
 import Transition from 'react-motion-ui-pack'
+import PanelBar from '../compounds/PanelBar'
 import {
-  closest
-} from '../util/color'
+  closest,
+  normalizeHex
+} from '../../util/color'
 
-const randomColor = () => Math.random().toString(16).substr(-6)
 
 const View = styled.div`
   height: 100vh;
@@ -41,10 +43,9 @@ const Input = styled.input`
   }
 `
 
-const Output = styled.div`
+const OutputText = styled.div`
   text-align: center;
   font-size: 4rem;
-  text-transform: uppercase;
   margin: 1rem;
   font-weight: 900;
   @media screen and (max-width: 640px) {
@@ -53,16 +54,16 @@ const Output = styled.div`
 `
 
 const PickerBox = styled.div`
-  height: 10rem;
   max-width: 30rem;
-  margin: 0 auto;
+  margin: -4rem auto 0 auto;
 `
 
-const OutputView = createReactClass({
+const Output = createReactClass({
   render () {
     return (
       <Transition
         component={false}
+        runOnMount={false}
         enter={{
           opacity: 1,
           translateY: spring(0, {stiffness: 600, damping: 20})
@@ -74,20 +75,18 @@ const OutputView = createReactClass({
       >
         {
           !this.props.closed &&
-          <div key='modal' className='modal__content'>
-            <Output>{this.props.name}</Output>
-          </div>
+          <OutputText key="output">{this.props.name}</OutputText>
         }
       </Transition>
     )
   }
 })
 
-const ColorPicker = createReactClass({
+const Index = createReactClass({
   getInitialState () {
-    const closestColor = closest(randomColor())
+    const closestColor = closest(this.props.color)
     return {
-      input: closestColor[0],
+      input: this.props.color.toUpperCase(),
       output: closestColor,
       closed: false
     }
@@ -100,30 +99,34 @@ const ColorPicker = createReactClass({
       closed: closestColor[0] === ''
     })
   },
-  moveCaretToEnd (e) {
-    const temp = e.target.value
-    e.target.value = ''
-    e.target.value = temp
-  },
   render () {
     return (
-      <View style={{backgroundColor: this.state.input}}>
+      <View style={{backgroundColor: normalizeHex(this.state.input)}}>
+        <GitlabLogo />
         <PickerBox>
-          <Input
-            type='text'
-            onChange={this.handleChange}
-            value={this.state.input[0] === '#' ? this.state.input : '#' + this.state.input}
-           // onFocus={this.moveCaretToEnd}
-            autoFocus
-          />
-          <OutputView
+          <form action="/"
+                method="post"
+                autoComplete="off"
+          >
+            <Input
+              id="input"
+              type='text'
+              onChange={this.handleChange}
+              value={this.state.input[0] === '#' ? this.state.input : '#' + this.state.input}
+              autoFocus
+              name="color"
+              ref = { input => this.color = input }
+            />
+          </form>
+          <Output
             closed={this.state.closed}
             name={this.state.output[1]}
           />
         </PickerBox>
+        <PanelBar color="#000" />
       </View>
     )
   }
 })
 
-export default ColorPicker
+export default Index

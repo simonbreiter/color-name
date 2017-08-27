@@ -1,14 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { injectGlobal } from 'styled-components'
+import App from './components/App'
+import { BrowserRouter } from 'react-router-dom'
+import { randomColor } from './util/color'
 
-import ColorPicker from './components/colorPicker'
+const c = document.querySelector('#input')
 
-injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=Roboto:400,900');
-  body {
-    margin: 0;
-  }
-`
-
-ReactDOM.render(<ColorPicker />, document.body.querySelector('.app'))
+ReactDOM.render(
+  <BrowserRouter>
+    <App color={c ? c.value : randomColor()} />
+  </BrowserRouter>
+  , document.body.querySelector('#app'))

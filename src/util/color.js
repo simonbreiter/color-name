@@ -1,5 +1,7 @@
 import { hex2dec } from './math'
 
+const randomColor = () => Math.random().toString(16).substr(-6)
+
 const closest = col => {
   if (isHexColor(col)) {
     let closestColor
@@ -1611,8 +1613,9 @@ const colors = [
 ]
 
 export {
-  colorDistance,
+  randomColor,
   closest,
+  colorDistance,
   isHexColor,
   normalizeHex,
   stripHashtag
