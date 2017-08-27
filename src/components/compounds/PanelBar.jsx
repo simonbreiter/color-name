@@ -37,20 +37,20 @@ const PanelText = styled.p`
 `
 
 const PanelBar = createReactClass({
-  render() {
+  render () {
     return (
       <Panel>
         <TwitterLogo iconColor={this.props.color} />
         <PanelText style={{color: this.props.color}}>
           Another thing from <a style={{color: this.props.color}}
-                                href="https://simonbreiter.com"
-                                target="_blank">Simon Breiter</a>.
+            href='https://simonbreiter.com'
+            target='_blank'>Simon Breiter</a>.
         </PanelText>
         <Nav>
-          <NavLink exact to="/" activeStyle={activeStyle}>
+          <NavLink exact to='/' activeStyle={activeStyle}>
             <CloseButton color={this.props.color} />
           </NavLink>
-          <NavLink to="/about" activeStyle={activeStyle}>
+          <NavLink to='/about' activeStyle={activeStyle}>
             <AboutButton color={this.props.color} />
           </NavLink>
         </Nav>

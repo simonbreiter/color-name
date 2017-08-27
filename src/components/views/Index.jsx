@@ -10,7 +10,6 @@ import {
   normalizeHex
 } from '../../util/color'
 
-
 const View = styled.div`
   height: 100vh;
   transition: background-color .4s ease;
@@ -75,7 +74,7 @@ const Output = createReactClass({
       >
         {
           !this.props.closed &&
-          <OutputText key="output">{this.props.name}</OutputText>
+          <OutputText key='output'>{this.props.name}</OutputText>
         }
       </Transition>
     )
@@ -104,18 +103,18 @@ const Index = createReactClass({
       <View style={{backgroundColor: normalizeHex(this.state.input)}}>
         <GitlabLogo />
         <PickerBox>
-          <form action="/"
-                method="post"
-                autoComplete="off"
+          <form action='/'
+            method='post'
+            autoComplete='off'
           >
             <Input
-              id="input"
+              id='input'
               type='text'
               onChange={this.handleChange}
               value={this.state.input[0] === '#' ? this.state.input : '#' + this.state.input}
               autoFocus
-              name="color"
-              ref = { input => this.color = input }
+              name='color'
+              ref={input => this.color = input}
             />
           </form>
           <Output
@@ -123,7 +122,7 @@ const Index = createReactClass({
             name={this.state.output[1]}
           />
         </PickerBox>
-        <PanelBar color="#000" />
+        <PanelBar color='#000' />
       </View>
     )
   }

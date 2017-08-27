@@ -44,10 +44,10 @@ const App = createReactClass({
     return (
       <Box>
         <Switch>
-          <Route exact path="/" render={props => (
+          <Route exact path='/' render={props => (
             <Index color={this.props.color} />
           )} />
-          <Route path="/about" component={About} />
+          <Route path='/about' component={About} />
         </Switch>
       </Box>
     )

@@ -38,11 +38,11 @@ const About = createReactClass({
           </p>
           <h2>Credits</h2>
           <p>
-            This project was inspired by <a href="http://chir.ag/projects/name-that-color/">name-that-color</a>.
-            All color names used are copyrighted by <a href="http://people.csail.mit.edu/jaffer/Color/resenecolours.txt">Resene Paints Ltd</a>.
+            This project was inspired by <a href='http://chir.ag/projects/name-that-color/'>name-that-color</a>.
+            All color names used are copyrighted by <a href='http://people.csail.mit.edu/jaffer/Color/resenecolours.txt'>Resene Paints Ltd</a>.
           </p>
         </TextPanel>
-        <PanelBar color="#fff"/>
+        <PanelBar color='#fff' />
       </View>
     )
   }

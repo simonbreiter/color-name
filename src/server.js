@@ -14,7 +14,6 @@ const port = process.env.PORT || 3000
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static('build/public'))
 
-
 const createDocument = (color, req) => {
   const context = {}
   const sheet = new ServerStyleSheet()
