@@ -11,9 +11,6 @@ import { ServerStyleSheet } from 'styled-components'
 const app = express()
 const port = process.env.PORT || 3000
 
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(express.static('build/public'))
-
 const createDocument = (color, req) => {
   const context = {}
   const sheet = new ServerStyleSheet()
@@ -28,6 +25,16 @@ const createDocument = (color, req) => {
   const document = html(css, app)
   return document
 }
+
+app.get('*.js', function (req, res, next) {
+  req.url = req.url + '.gz'
+  res.set('Content-Encoding', 'gzip')
+  res.set('Content-Type', 'text/javascript')
+  next()
+})
+
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(express.static('build/public'))
 
 app.get('*', (req, res) => {
   const color = randomColor()
