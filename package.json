@@ -4,14 +4,14 @@
   "description": "colorname.io",
   "main": "build/server.js",
   "scripts": {
-    "webpack": "webpack",
-    "webpack:dev": "webpack --watch",
+    "webpack": "webpack --mode=production",
+    "webpack:dev": "webpack --mode=development --watch",
     "node:dev": "nodemon build/server.js",
     "dev": "npm-run-all --parallel webpack:dev node:dev",
     "lint": "standard --env jasmine",
     "lint:fix": "standard --env jasmine --fix",
     "test": "babel-istanbul cover jasmine-node spec",
-    "build": "npm run webpack",
+    "build": "yarn webpack",
     "docker:dev": "docker-compose build; docker-compose -f docker-compose.yml up -d",
     "docker:prod": "docker-compose build; docker-compose -f docker-compose.prod.yml up -d",
     "start": "node build/server.js"
@@ -47,7 +47,10 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.0",
     "standard": "^10.0.3",
-    "styled-components": "^2.1.2",
-    "webpack": "^3.5.1"
+    "styled-components": "^2.1.2"
+  },
+  "devDependencies": {
+    "webpack": "^4.3.0",
+    "webpack-cli": "^2.0.13"
   }
 }
