@@ -5,6 +5,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Color Name</title>
         ${css}
+				<script>
+					var WebFontConfig = {
+						google: {
+								families: ['Roboto:400,900']
+						},
+						timeout: 3000
+					};
+					(function(d) {
+						var wf = d.createElement('script'), s = d.scripts[0];
+						wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+						wf.async = true;
+						s.parentNode.insertBefore(wf, s);
+					})(document);
+				</script>
         <!-- Piwik -->
         <script type="text/javascript">
           var _paq = _paq || [];

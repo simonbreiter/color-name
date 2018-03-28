@@ -11,8 +11,6 @@ import {
 } from 'react-router-dom'
 
 injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=Roboto:400,900');
-  
   html {
     box-sizing: border-box; 
   }
