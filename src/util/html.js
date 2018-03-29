@@ -2,6 +2,10 @@
     <!DOCTYPE html>
     <html lang="en">
     <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Get the name of your color">
+        <meta name="keywords" content="Colorname, Color, Hexcode, Online, Konverter, Simon Breiter">
+        <meta name="author" content="Simon Breiter">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Color Name</title>
         ${css}
