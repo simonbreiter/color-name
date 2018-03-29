@@ -7,6 +7,7 @@ import html from './util/html'
 import { randomColor } from './util/color'
 import { StaticRouter } from 'react-router-dom'
 import { ServerStyleSheet } from 'styled-components'
+import helmet from 'helmet'
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -25,6 +26,13 @@ const createDocument = (color, req) => {
   const document = html(css, app)
   return document
 }
+
+app.use(helmet())
+
+app.use(function (req, res, next) {
+  res.header('X-Page-Speed', 'ludicrous')
+  next()
+})
 
 app.get('*.js', function (req, res, next) {
   req.url = req.url + '.gz'
