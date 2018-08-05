@@ -42,7 +42,7 @@ const PanelBar = createReactClass({
       <Panel>
         <TwitterLogo iconColor={this.props.color} />
         <PanelText style={{color: this.props.color}}>
-          Another thing from <a style={{color: this.props.color}}
+          Another thing by <a style={{color: this.props.color}}
             href='https://simonbreiter.com'
             target='_blank'>Simon Breiter</a>.
         </PanelText>
