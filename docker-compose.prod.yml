@@ -2,8 +2,7 @@ version: "3"
 services:
   node:
     container_name: color-name
-    restart: always
-    build: .
+    image: registry.gitlab.com/simonbreiter/color-name:latest
     ports:
        - "3000:3000"
     command: npm run start
