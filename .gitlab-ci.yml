@@ -38,7 +38,7 @@ deploy:
   image: dtzar/helm-kubectl
   script:
     - kubectl config set-cluster k8s --server="${K8S_API_URL}"
-    - kubectl config set users.cluster-admin.client-key-data ${K8S_CA_CERTIFICATE} --set-raw-bytes=false
+    - kubectl config set clusters.k8s.certificate-authority-data ${K8S_CA_CERTIFICATE}
     - kubectl config set-credentials gitlab --token="${K8S_TOKEN}"
     - kubectl config set-context default --cluster=k8s --user=gitlab
     - kubectl config use-context default
