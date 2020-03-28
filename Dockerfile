@@ -1,4 +1,4 @@
-FROM node:7
+FROM node:13
 
 MAINTAINER Simon Breiter hello@simonbreiter.com
 
