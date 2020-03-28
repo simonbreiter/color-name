@@ -10,6 +10,3 @@ WORKDIR /usr/src/color-name
 ADD . /usr/src/color-name
 
 EXPOSE 3000
-
-RUN npm install
-RUN npm run build

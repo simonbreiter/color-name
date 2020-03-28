@@ -1,17 +1,29 @@
 stages:
-  - test
   - build
+  - test
+  - docker
   - deploy
+
+build:
+  stage: build
+  image: node:13
+  cache:
+    paths:
+      - node_modules
+  artifacts:
+    paths:
+      - node_modules
+  script:
+    - npm install
 
 test:
   stage: test
   image: node:13
   script:
-    - npm install
     - npm run test
 
-build:
-  stage: build
+docker:
+  stage: docker
   image: docker:latest
   services:
   - docker:dind
