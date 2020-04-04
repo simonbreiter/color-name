@@ -1,0 +1,19 @@
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: color-name-ingress
+  namespace: color-name
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  tls:
+    - hosts:
+      - getcolorname.com 
+  rules:
+  - host: getcolorname.com
+    http:
+      paths:
+      - backend:
+          serviceName: color-name-service
+          servicePort: 80
