@@ -52,7 +52,6 @@ docker:arm64:
   script:
     - update-binfmts --enable # Important: Ensures execution of other binary formats is enabled in the kernel
     - docker buildx build --platform linux/arm64 -t $CI_REGISTRY/simonbreiter/color-name:$CI_COMMIT_SHORT_SHA-arm64 --push .
-    - docker push $CI_REGISTRY/simonbreiter/color-name:$CI_COMMIT_SHORT_SHA-arm64
 
 #deploy:
 #  stage: deploy
