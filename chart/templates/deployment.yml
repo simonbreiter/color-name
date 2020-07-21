@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: color-name
-          image: registry.gitlab.com/simonbreiter/color-name:latest
+          image: registry.gitlab.com/simonbreiter/color-name:{{ .Values.image.tag }}
           command: ["npm", "run", "start"]
           ports:
           - containerPort: 3000
