@@ -7,8 +7,9 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   tls:
-    - hosts:
-      - getcolorname.com 
+  - hosts:
+    - getcolorname.com
+    secretName: color-name-tls
   rules:
   - host: getcolorname.com
     http:

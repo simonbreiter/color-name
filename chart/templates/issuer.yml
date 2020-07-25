@@ -1,0 +1,21 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Issuer
+metadata:
+  name: color-name-letsencrypt
+  namespace: color-name
+spec:
+  acme:
+    email: hello@simonbreiter.com
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: color-name-letsencrypt
+    solvers:
+    - selector:
+        dnsNames:
+        - getcolorname.com
+      dns01:
+        cloudflare:
+          email: hello@simonbreiter.com
+          apiTokenSecretRef:
+            name: cloudflare-api-token-secret
+            key: api-token
