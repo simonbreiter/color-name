@@ -16,3 +16,15 @@ Local development with docker:
 ```bash
 npm run docker:dev
 ```
+
+## Installation with Helm
+
+```bash
+kubectl create namespace color-name
+````
+
+ARM:
+```bash
+ helm install color-name chart --namespace color-name --set image.tag=fe2140d7-arm64
+ ```
+
